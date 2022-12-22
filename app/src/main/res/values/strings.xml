@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Parichay</string>
+    <string name="title_activity_elloramapview">elloramapview</string>
+    <string name="title_activity_siddhivinayak">siddhivinayak</string>
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_singhagad">Singhagad</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mahan_rashtra">Mahan Rashtra</string>
+    <string name="todo">TODO</string>
+    <string name="home">Home</string>
+    <string name="travel">Travel</string>
+</resources>

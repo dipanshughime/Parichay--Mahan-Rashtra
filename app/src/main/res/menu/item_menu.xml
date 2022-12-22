@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home"/>
+
+
+    <item android:id="@+id/nav_travel"
+        android:title="@string/travel"
+        android:icon="@drawable/ic_baseline_emoji_transportation_24"/>
+
+
+    <item android:id="@+id/nav_list"
+        android:title="Bucket List"
+        android:icon="@drawable/ic_baseline_checklist_24"/>
+
+
+
+
+    <item android:id="@+id/nav_like"
+        android:title="Like"
+        android:icon="@drawable/ic_baseline_favorite_24"/>
+
+
+
+    <item android:id="@+id/nav_profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_baseline_person_24"/>
+
+
+
+
+
+</menu>
