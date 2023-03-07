@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class Registerpg extends AppCompatActivity {
-    TextView alreadyHaveaccount;
+    Button alreadyHaveaccount;
     EditText inputemail, inputpassword, inputconformpassword;
     Button btnRegister;
     Button log;
@@ -34,6 +34,14 @@ public class Registerpg extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        inputemail=(EditText)findViewById(R.id.editTextTextEmailAddress);
+        inputpassword=(EditText)findViewById(R.id.editTextTextPassword);
+        inputconformpassword=(EditText) findViewById(R.id.editTextTextPassword2);
+        resg=(Button)findViewById(R.id.yo);
+        alreadyHaveaccount=(Button)findViewById(R.id.button8);
+        //progressDialog=new ProgressDialog(this);
+        mAuth=FirebaseAuth.getInstance();
+        mUser=mAuth.getCurrentUser();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registerpg);
 
@@ -42,12 +50,50 @@ public class Registerpg extends AppCompatActivity {
         resg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Registerpg.this, Main.class);
-                startActivity(intent);
+                PerformAuth();
+
+
             }
+
         });
+
+        alreadyHaveaccount.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Registerpg.this,loginpg.class);
+            }
+        }));
+
+    }
+
+    public void PerformAuth() {
+        String email = inputemail.getText().toString();
+        String password = inputpassword.getText().toString();
+        String confirmpassword = inputconformpassword.getText().toString();
+        if (email.equals("") || password.equals("") || confirmpassword.equals("")) {
+            Toast.makeText(getApplicationContext(), "fill all the fields", Toast.LENGTH_LONG).show();
+        } else if (!password.equals(confirmpassword)) {
+            Toast.makeText(getApplicationContext(), "password  not matched", Toast.LENGTH_LONG).show();
+        } else {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(Registerpg.this, loginpg.class);
+                        startActivity(intent);
+                    } else {
+
+                        Toast.makeText(getApplicationContext(), "Registration failed", Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            });
+        }
     }
 }
+
+
 // prev code
 
 //package com.example.parichay;

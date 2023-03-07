@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gauth">
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="504dp"
+        android:layout_height="438dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/img_best"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/gsign"
+        android:layout_width="297dp"
+        android:layout_height="68dp"
+        android:background="@drawable/rect"
+        android:backgroundTint="#040404"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="16sp"
+        android:text="Sign in with Google"
+        android:textAlignment="textEnd"
+        android:textColor="#0C0C0C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView20"
+        app:layout_constraintVertical_bias="0.091" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="58dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gsign"
+        app:layout_constraintEnd_toEndOf="@+id/gsign"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/gsign"
+        app:layout_constraintTop_toTopOf="@+id/gsign"
+        app:layout_constraintVertical_bias="0.416"
+        app:srcCompat="@drawable/googleg_standard_color_18" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
